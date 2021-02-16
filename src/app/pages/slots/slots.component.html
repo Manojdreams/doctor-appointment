@@ -1,0 +1,59 @@
+<div class="page-wrapper">
+  <div class="content container-fluid">
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="row">
+        <div class="col-sm-8">
+          <h3 class="page-title">Slots</h3>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <a type="button" class="btn btn-success" [routerLink]="'/dashboard'">Appointments</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Page Header -->
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="Select date" class="col-form-label">Select date</label>
+          <input type="text" placeholder="Datepicker" [(ngModel)]="myDate" (ngModelChange)="onChange()" class="form-control"
+            bsDatepicker>
+        </div>
+      </div>
+      <div class="col-md-7 no-float">
+        <div class="heading">
+          <div class="heading-left">
+            <label>Mor<span>9AM to 12PM</span></label>
+          </div>
+          <div class="heading-right">
+            <a (click)="addSlot('morning')">Add Slot</a>
+          </div>
+        </div>
+        <br />
+        <div class="outer"   *ngFor="let slots of slotList ">
+          <div class="inner" (click)="addAppointment(slots)" *ngIf="slots.slot_schedule === 'morning'">
+            <a >{{slots.from_time}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7 offset-md-3 no-float">
+        <div class="heading">
+          <div class="heading-left">
+            <label>Eve<span> 5PM to 9PM</span></label>
+          </div>
+          <div class="heading-right">
+            <a  (click)="addSlot('evening')">Add Slot</a>
+          </div>
+        </div>
+        <div class="outer"  *ngFor="let slots of slotList ">  
+          <div class="inner" (click)="addAppointment(slots)" *ngIf="slots.slot_schedule === 'evening'" >
+            <a>{{slots.from_time}}</a>
+          </div>
+        </div>
+      </div>
+    </div>

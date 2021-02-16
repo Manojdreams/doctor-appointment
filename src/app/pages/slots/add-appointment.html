@@ -1,0 +1,29 @@
+<mat-card class="add-card">
+  <mat-card-title>Add Appointment</mat-card-title>
+  <mat-card-content>
+    <form class="signup-form" (ngSubmit)="saveAppointment()" [formGroup]="appointmentForm">
+      <p>
+        <mat-form-field>
+          <input type="text" formControlName="patient_name" matInput placeholder="Enter patient name">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input type="text" matInput formControlName="contact" placeholder="Enter contact number">
+        </mat-form-field>
+      </p>
+            <p>
+              <mat-form-field>
+                <input type="text" matInput formControlName="age" placeholder="Enter your age">
+              </mat-form-field>
+            </p>
+      <div class="button">
+        <button type="submit" mat-button>Add</button>
+      </div>
+      <div style="text-align: center;">
+        <a (click)="close()">Close</a>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+

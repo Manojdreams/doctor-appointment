@@ -1,0 +1,78 @@
+.btn-success{
+  color: #fff;
+  background-color: #153fc7 !important;
+  border-color: #153fc7 !important;
+}
+
+.row{
+  margin-top: 20px;
+}
+
+.container  {
+    margin: 50px 0px;
+}
+.outer {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+.inner {
+    margin: 0px 10px 20px;
+    padding: 5px 15px;
+    border: solid 1px #000;
+}
+.heading {
+    margin: 20px;
+}
+.heading-left {
+    float: left;
+}
+.heading-right {
+    float: right;
+} 
+.heading-right a{
+    cursor: pointer;
+} 
+.text-center {
+    color: red;
+}
+.txt {
+    font-size: 11px;
+    color: red;
+}
+.time-picker {
+    height:30px;
+}
+.np-tp-input-group {
+    outline: none !important;
+}
+.time-margin {
+    margin-bottom: 50px;
+}
+html,body,.container
+{
+    height:100%;
+}
+.container
+{
+    display:table;
+    width: 100%;
+    margin-top: -50px;
+    padding: 50px 0 0 0; /*set left/right padding according to needs*/
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+header
+{
+    height: 50px;
+}
+
+.row
+{
+    height: 100%;
+    display: flex;
+}
+@media (min-width: 992px) {
+  .row .no-float {
+      float: left;
+  }
+}

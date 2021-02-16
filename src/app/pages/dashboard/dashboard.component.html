@@ -1,0 +1,54 @@
+<div class="page-wrapper">
+  <div class="content container-fluid">
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="row">
+        <div class="col-sm-8">
+          <h3 class="page-title">Appointment List</h3>
+                      <a type="button" class="btn btn-success" [routerLink]="'/slots'">Slots</a>
+        </div>
+        <div class="col-sm-4">
+                          <label for="Select date" class="col-form-label">Select date</label>
+                          <input type="text" placeholder="Datepicker" [(ngModel)]="myDate" (ngModelChange)="onChange()" class="form-control"
+                            bsDatepicker [(bsValue)]="myDateValue">
+        </div>
+      </div>
+    </div>
+    <!-- /Page Header -->
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive" >
+              <table class="datatable table table-hover table-center mb-0">
+                <thead>
+                  <tr>
+                    <th>Patient Name</th>
+                    <th>Age</th>
+                    <th>Appointment</th>
+                    <th>Contact Number</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let appointment of appointments">
+                    <td>
+                      <a class="avatar avatar-sm mr-2"><img class="img-fluid user-img" src="assets/img/user.jpg"
+                          alt="User Image"></a>
+                      <a>{{appointment.patient_name}}</a>
+                    </td>
+                    <td>{{appointment.age}}</td>
+                    <td>{{appointment.appointment_time}}</td>
+                    <td>{{appointment.contact}}</td>
+                  </tr>
+                  <p *ngIf="appointments.length === 0" style="text-align: center;"> No appointments found</p>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

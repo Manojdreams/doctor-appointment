@@ -1,0 +1,17 @@
+<mat-card class="add-card">
+  <mat-card-title>Add Slot</mat-card-title>
+  <mat-card-content>
+      <p>
+        <input matInput name="selected_time_B" format="24" [(ngModel)]="selectedTime" [ngxMatTimepicker]="pickerB"
+          placeholder="select time"  (ngModelChange)="onChange()" readonly />
+          <ngx-mat-timepicker color="accent" #pickerB></ngx-mat-timepicker>
+      </p>
+
+      <div class="button">
+        <button type="submit" mat-button>Add</button>
+      </div>
+      <div style="text-align: center;">
+        <a (click)="close()">Close</a>
+      </div>
+  </mat-card-content>
+</mat-card>
